@@ -4,6 +4,11 @@
 
 当用户在章节页面点击 "Next" 按钮或使用键盘右箭头键时，会自动跳转到配置的目标域名，而不是本站的下一章节。
 
+**SEO友好设计：**
+- ✅ **爬虫/搜索引擎**：HTML中保留本站真实的下一章URL（如 `/novels/xxx/chapter-2`），方便索引
+- ✅ **真实用户点击**：JavaScript拦截点击事件，跳转到配置的目标域名
+- ✅ **完美平衡**：既不影响SEO，又能实现用户流量引导
+
 ## 配置方法
 
 ### 1. 编辑配置文件
@@ -78,10 +83,33 @@ https://www.xixifreenovel.com/novels/the-last-spirit-wolf/chapter-2.html
 
 ## 技术实现
 
-- JavaScript 拦截 Next 按钮点击事件
-- 解析原始 URL 并提取路径
-- 将路径拼接到配置的目标域名
-- 支持键盘导航（右箭头键）
+**SEO友好的实现方式：**
+
+1. **HTML层面（爬虫可见）**
+   ```html
+   <a href="/novels/the-last-spirit-wolf/chapter-2" class="nav-btn" id="next-chapter">
+       Next
+   </a>
+   ```
+   - href 属性保留本站真实URL
+   - 搜索引擎爬虫可以正常抓取和索引链接
+
+2. **JavaScript层面（用户交互）**
+   ```javascript
+   // 只拦截真实用户的点击事件
+   nextBtn.addEventListener('click', function(e) {
+       e.preventDefault(); // 阻止默认跳转
+       window.location.href = '配置的目标域名 + 路径';
+   });
+   ```
+   - 用户点击时，JavaScript 拦截并重定向
+   - 爬虫不执行 JavaScript，看到的是原始 href
+
+3. **优势**
+   - ✅ 爬虫抓取本站链接，有利于SEO
+   - ✅ 用户被引导到目标站点
+   - ✅ 支持键盘导航（右箭头键）
+   - ✅ 符合搜索引擎最佳实践
 
 ## 注意事项
 

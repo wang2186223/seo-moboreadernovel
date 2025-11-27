@@ -1132,6 +1132,7 @@
             } else if (e.key === 'ArrowRight') {
                 const nextBtn = document.getElementById('next-chapter');
                 if (nextBtn && !nextBtn.disabled) {
+                    // 键盘操作也跳转到配置的域名
                     const targetUrl = getNextChapterUrl(nextBtn.href);
                     window.location.href = targetUrl;
                 }
@@ -1140,12 +1141,15 @@
             }
         });
         
-        // Intercept next chapter button click
+        // Intercept next chapter button click (只对真实用户点击生效，爬虫会看到原始href)
         document.addEventListener('DOMContentLoaded', function() {
             const nextBtn = document.getElementById('next-chapter');
-            if (nextBtn && !nextBtn.disabled) {
+            if (nextBtn && !nextBtn.disabled && NEXT_CHAPTER_DOMAIN) {
+                // 保留原始href供爬虫抓取，只拦截点击事件
                 nextBtn.addEventListener('click', function(e) {
+                    // 阻止默认跳转
                     e.preventDefault();
+                    // 真实用户点击时跳转到配置的域名
                     const targetUrl = getNextChapterUrl(this.href);
                     window.location.href = targetUrl;
                 });

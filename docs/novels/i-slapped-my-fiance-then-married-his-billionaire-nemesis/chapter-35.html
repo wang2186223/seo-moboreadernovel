@@ -10,10 +10,10 @@
     
     <!-- Time Meta Tags for SEO -->
     
-    <meta property="article:published_time" content="2025-11-27T12:47:55.739818">
-    <meta property="article:modified_time" content="2025-11-27T12:47:55.739818">
+    <meta property="article:published_time" content="2025-11-27T13:10:49.172026">
+    <meta property="article:modified_time" content="2025-11-27T13:10:49.172026">
     <meta name="date" content="2025-11-27">
-    <meta name="last-modified" content="2025-11-27 12:47:55">
+    <meta name="last-modified" content="2025-11-27 13:10:49">
     
     
     <!-- Open Graph Meta Tags -->
@@ -736,8 +736,8 @@
             "@type": "Person",
             "name": "Unknown Author"
         },
-        "datePublished": "2025-11-27T12:47:55.739818",
-        "dateModified": "2025-11-27T12:47:55.739818",
+        "datePublished": "2025-11-27T13:10:49.172026",
+        "dateModified": "2025-11-27T13:10:49.172026",
         "publisher": {
             "@type": "Organization",
             "name": "NovelVibe",
@@ -2200,6 +2200,7 @@
             } else if (e.key === 'ArrowRight') {
                 const nextBtn = document.getElementById('next-chapter');
                 if (nextBtn && !nextBtn.disabled) {
+                    // 键盘操作也跳转到配置的域名
                     const targetUrl = getNextChapterUrl(nextBtn.href);
                     window.location.href = targetUrl;
                 }
@@ -2208,12 +2209,15 @@
             }
         });
         
-        // Intercept next chapter button click
+        // Intercept next chapter button click (只对真实用户点击生效，爬虫会看到原始href)
         document.addEventListener('DOMContentLoaded', function() {
             const nextBtn = document.getElementById('next-chapter');
-            if (nextBtn && !nextBtn.disabled) {
+            if (nextBtn && !nextBtn.disabled && NEXT_CHAPTER_DOMAIN) {
+                // 保留原始href供爬虫抓取，只拦截点击事件
                 nextBtn.addEventListener('click', function(e) {
+                    // 阻止默认跳转
                     e.preventDefault();
+                    // 真实用户点击时跳转到配置的域名
                     const targetUrl = getNextChapterUrl(this.href);
                     window.location.href = targetUrl;
                 });
