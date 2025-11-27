@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.6noveluuj.top/sitemap.xml
+Sitemap: https://www.moboreader.top/sitemap.xml
 
 # Allow all search engines to crawl the site
 Allow: /novels/
