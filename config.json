@@ -1,12 +1,12 @@
 {
   "version": "1.2.8",
   "site": {
-    "name": "Free NovelVibe",
+    "name": "Moboreader Novel",
     "description": "Free Werewolf Novels for American Women",
-    "url": "https://www.6noveluuj.top",
+    "url": "https://www.moboreader.top",
     "next_chapter_domain": "https://www.xixifreenovel.com",
     "language": "en-US",
-    "author": "NovelVibe Team"
+    "author": "Moboreader Novel Team"
   },
   "build": {
     "source_path": "source",
@@ -18,7 +18,7 @@
   "seo": {
     "keywords": ["werewolf novels", "free novels", "romance novels", "shifter books", "paranormal romance"],
     "description_template": "Read {title} by {author} - Free werewolf novel online. {description}",
-    "title_template": "{title} - {author} | NovelVibe Free Novels"
+    "title_template": "{title} - {author} | Moboreader Novel"
   },
   "analytics": {
     "google_analytics_id": "G-EWY8W7MKKM",

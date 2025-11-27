@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if chapter.title and novel.title %}{{ chapter.title }} - {{ novel.title }} | Free Novel Online - NovelVibe{% else %}Reading - Free Novel Online - NovelVibe{% endif %}</title>
-    <meta name="description" content="{% if chapter.summary %}{{ chapter.summary }}{% else %}Read {{ novel.title }} Chapter {{ chapter.number }} on NovelVibe - Free werewolf romance novels{% endif %}">
+    <title>{% if chapter.title and novel.title %}{{ chapter.title }} - {{ novel.title }} | Free Novel Online - Moboreader Novel{% else %}Reading - Free Novel Online - Moboreader Novel{% endif %}</title>
+    <meta name="description" content="{% if chapter.summary %}{{ chapter.summary }}{% else %}Read {{ novel.title }} Chapter {{ chapter.number }} on Moboreader Novel - Free werewolf romance novels{% endif %}">
     <meta name="keywords" content="free novel online, {% if novel.tags %}{{ novel.tags|join(', ') }}, {% endif %}novel updates, light novel, apothecary diaries light novel, heavens official blessing novel, dune novel, read novel free, online novel, romance novel, graphic novel, visual novel, novel master, novel synonym, school spirits graphic novel, how many words in a novel, free novels online">
     <meta name="robots" content="index, follow">
     
@@ -810,7 +810,7 @@
         "dateModified": "{{ timestamps.modified_iso }}",
         "publisher": {
             "@type": "Organization",
-            "name": "NovelVibe",
+            "name": "Moboreader Novel",
             "url": "{{ site_url }}",
             "logo": {
                 "@type": "ImageObject",
@@ -881,7 +881,7 @@
                 "name": "Can I read free novels online?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! You can read {{ novel.title }} and thousands of other free novels online at NovelVibe. We offer light novels, graphic novels, visual novels, romance novels, and more without registration or payment."
+                    "text": "Yes! You can read {{ novel.title }} and thousands of other free novels online at Moboreader Novel. We offer light novels, graphic novels, visual novels, romance novels, and more without registration or payment."
                 }
             },
             {
@@ -889,7 +889,7 @@
                 "name": "How do I get novel updates?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Visit NovelVibe regularly for daily novel updates. We add new chapters to {{ novel.title }} and other novels frequently. Bookmark this page to stay updated with the latest novel master content."
+                    "text": "Visit Moboreader Novel regularly for daily novel updates. We add new chapters to {{ novel.title }} and other novels frequently. Bookmark this page to stay updated with the latest novel master content."
                 }
             },
             {
@@ -921,7 +921,7 @@
                 "name": "What is a novel synonym?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Novel synonyms include: book, story, fiction, narrative, tale, romance, literature. On NovelVibe, you can explore all types of novels including light novels, graphic novels, visual novels, and classic romance novels."
+                    "text": "Novel synonyms include: book, story, fiction, narrative, tale, romance, literature. On Moboreader Novel, you can explore all types of novels including light novels, graphic novels, visual novels, and classic romance novels."
                 }
             }
         ]
@@ -939,7 +939,7 @@
                     <a href="{{ novel.url }}" class="btn" id="back-btn">
                         <i class="fas fa-chevron-left"></i>
                     </a>
-                    <a href="/" class="logo">NovelVibe</a>
+                    <a href="/" class="logo">Moboreader Novel</a>
                 </div>
                 <div class="right-header">
                     <button class="btn" id="theme-btn">
